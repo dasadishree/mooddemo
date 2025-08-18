@@ -22,6 +22,7 @@ struct NewJournalView: View {
                     .font(.title)
                     .bold()
                     .padding(.bottom, 10)
+                    .foregroundStyle(.pink)
                 
                 TextField("Journal Entry Title", text: $title)
                     .textFieldStyle(.roundedBorder)
@@ -53,18 +54,33 @@ struct NewJournalView: View {
             
             Spacer()
             
-            NavigationLink(destination: JournalView()) {
-                VStack {
-                    Image(systemName: "house.fill")
-                        .imageScale(.large)
-                    Text("Back to Journals")
+            HStack {
+                NavigationLink(destination: JournalView()) {
+                    VStack {
+                        Image(systemName: "book.pages.fill")
+                            .imageScale(.large)
+                        Text("Past Journals")
+                    }
+                    .padding()
+                    .background(
+                        RoundedRectangle(cornerRadius: 25)
+                            .stroke(Color(red: 235/255, green: 178/255, blue: 210/255), lineWidth: 5)
+                    )
+                    .foregroundStyle(Color(red: 235/255, green: 178/255, blue: 210/255))
                 }
-                .padding()
-                .background(
-                    RoundedRectangle(cornerRadius: 25)
-                        .stroke(Color(red: 235/255, green: 178/255, blue: 210/255), lineWidth: 5)
-                )
-                .foregroundStyle(Color(red: 235/255, green: 178/255, blue: 210/255))
+                NavigationLink(destination: ContentView()) {
+                    VStack {
+                        Image(systemName: "house.fill")
+                            .imageScale(.large)
+                        Text("Home Page")
+                    }
+                    .padding()
+                    .background(
+                        RoundedRectangle(cornerRadius: 25)
+                            .stroke(Color(red: 235/255, green: 178/255, blue: 210/255), lineWidth: 5)
+                    )
+                    .foregroundStyle(Color(red: 235/255, green: 178/255, blue: 210/255))
+                }
             }
         }
     }
