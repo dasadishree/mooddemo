@@ -21,7 +21,7 @@ struct ContentView: View {
                 )
                 .padding()
             
-            NavigationLink(destination: JournalView()) {
+            NavigationLink(destination: NewJournalView()) {
                 VStack {
                     Image(systemName: "book.pages.fill")
                         .imageScale(.large)
