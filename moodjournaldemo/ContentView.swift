@@ -10,7 +10,10 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         NavigationStack {
+            //navbar
             Navbar()
+
+            //short summary section
             Text("Need to get something off your chest? Journalling can be a powerful tool for managing your mental health and venting your feelings. By writing about your experiences, you better understand your emotions and can learn to cope. Many therapists and psychology professionals reccomend journaling for its many health benefits. So... write a journal entry today!")
                 .multilineTextAlignment(.center)
                 .foregroundStyle(.white)
@@ -20,7 +23,8 @@ struct ContentView: View {
                         .foregroundStyle(Color(red: 178/255, green: 218/255, blue: 235/255))
                 )
                 .padding()
-            
+
+            //link to journal view
             NavigationLink(destination: NewJournalView()) {
                 VStack {
                     Image(systemName: "book.pages.fill")
