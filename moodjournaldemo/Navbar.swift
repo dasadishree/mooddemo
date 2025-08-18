@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Navbar: View {
-    var body: some View {
+    var body: some View {        
         HStack{
             Image("lotus")
                 .resizable()
