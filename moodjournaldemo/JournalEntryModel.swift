@@ -9,6 +9,7 @@ import Foundation
 
 @Model
 class JournalEntryModel {
+    // make swiftdata model of date, title, and entry content of each journal entry
     var date: Date
     var title: String
     var entry: String
