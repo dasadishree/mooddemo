@@ -9,12 +9,15 @@ import SwiftUI
 import SwiftData
 
 struct JournalView: View {
+    // load and sort data
     @Query(sort: \JournalEntryModel.date, order: .reverse) var entries: [JournalEntryModel]
 
     var body: some View {
+        // navbar
         Navbar()
             .navigationBarBackButtonHidden(true)
-        
+
+        // makes list based off of swiftdata model
         List(entries) { entry in
             VStack(spacing: 5) {
                 Text(entry.title)
@@ -29,8 +32,10 @@ struct JournalView: View {
         .padding(.vertical, 5)
         
         Spacer()
-        
+
+        // buttons to add new journal or go to home
         HStack {
+            // new journal
             NavigationLink(destination: NewJournalView()) {
                 VStack {
                     Image(systemName: "plus.fill")
@@ -44,6 +49,7 @@ struct JournalView: View {
                 )
                 .foregroundStyle(Color(red: 235/255, green: 178/255, blue: 210/255))
             }
+            // home
             NavigationLink(destination: ContentView()) {
                 VStack {
                     Image(systemName: "house.fill")
