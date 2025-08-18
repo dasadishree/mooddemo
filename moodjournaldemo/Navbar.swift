@@ -10,10 +10,13 @@ import SwiftUI
 struct Navbar: View {
     var body: some View {        
         HStack{
+            // logo image
             Image("lotus")
                 .resizable()
                 .scaledToFit()
                 .frame(width: 100, height: 100)
+
+            // logo text & font
             Text("Mood Journalling")
                 .foregroundStyle(.white)
                 .font(.custom("KaushanScript-Regular", size: 30))
